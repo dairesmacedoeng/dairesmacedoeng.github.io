@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Encerramento</title>
 
-<script>
+<head>
+    <title>Encerramento</title>
+
+    <script>
         function selecionarTexto() {
             var elemento = document.getElementById("resultadoTexto");
 
@@ -25,75 +26,76 @@
         }
     </script>
 
-  <script type="text/javascript">
-    function condicional() {
-      var selectedOption = document.getElementById("condenação-select").value;
-      var textBox = document.getElementById("condenação");
-      if (selectedOption === "4") {
-        textBox.style.display = "none";
-      } else {
-        textBox.style.display = "block";
-      }
-    }
+    <script type="text/javascript">
+        function condicional() {
+            var selectedOption = document.getElementById("condenação-select").value;
+            var textBox = document.getElementById("condenação");
+            if (selectedOption === "4") {
+                textBox.style.display = "none";
+            } else {
+                textBox.style.display = "block";
+            }
+        }
 
-    function obterOpcaoSelecionada() {
-      var valorData = document.getElementById("data").value;
-      var valorAcordo = document.getElementById("acordo").value;
-      var dataSplit = valorData.split("-");
-      var dataFormatada = dataSplit[2] + "/" + dataSplit[1] + "/" + dataSplit[0];
-      var acordoSplit = valorAcordo.split("-");
-      var acordoFormatada = acordoSplit[2] + "/" + acordoSplit[1] + "/" + acordoSplit[0];
-      var elemResponsavel = document.getElementById("responsável");
-      var selecionadaResponsavel = elemResponsavel.options[elemResponsavel.options.selectedIndex].text;
-      var elemFase = document.getElementById("fase");
-      var selecionadaFase = elemFase.options[elemFase.options.selectedIndex].text;
-      var elemRecorreu = document.getElementById("recorreu");
-      var selecionadaRecorreu = elemRecorreu.options[elemRecorreu.options.selectedIndex].text;
-      var valorCondenacao = document.getElementById("condenação").value;
-      valorCondenacao = (document.getElementById("condenação-select").value === "3") ? "R$ " + valorCondenacao : "NÃO HOUVE";
-      var elemObrigacao = document.getElementById("obrigação");
-      var selecionadaObrigacao = elemObrigacao.options[elemObrigacao.options.selectedIndex].text;
-      var elemStatus = document.getElementById("status");
-      var selecionadaStatus = elemStatus.options[elemStatus.options.selectedIndex].text;
-      var elemCustas = document.getElementById("custas");
-      var selecionadaCustas = elemCustas.options[elemCustas.options.selectedIndex].text;
-      var elemReativacao = document.getElementById("reativação");
-      var selecionadaReativacao = elemReativacao.options[elemReativacao.options.selectedIndex].text;
-      var resultado = "DATA DO TRÂNSITO EM JULGADO: " + dataFormatada +
-        "\n\n\nDATA DO ACORDO: " + acordoFormatada +
-        "\n\n\nRESPONSÁVEL DO PROCESSO: " + selecionadaResponsavel +
-        "\n\n\nFASE: " + selecionadaFase +
-        "\n\n\nQUEM RECORREU: " + selecionadaRecorreu +
-        "\n\n\nCONDENAÇÃO/CUMPRIMENTO EM PAGAMENTO: " + valorCondenacao +
-        "\n\n\nOBRIGAÇÃO DE FAZER: " + selecionadaObrigacao +
-        "\n\n\nSTATUS: " + selecionadaStatus +
-        "\n\n\nHOUVE PAGAMENTO DE CUSTAS FINAIS? " + selecionadaCustas +
-        "\n\n\nHOUVE REATIVAÇÃO? " + selecionadaReativacao;
+        function obterOpcaoSelecionada() {
+            var valorData = document.getElementById("data").value;
+            var valorAcordo = document.getElementById("acordo").value;
+            var dataSplit = valorData.split("-");
+            var dataFormatada = dataSplit[2] + "/" + dataSplit[1] + "/" + dataSplit[0];
+            var acordoSplit = valorAcordo.split("-");
+            var acordoFormatada = acordoSplit[2] + "/" + acordoSplit[1] + "/" + acordoSplit[0];
+            var elemResponsavel = document.getElementById("responsável");
+            var selecionadaResponsavel = elemResponsavel.options[elemResponsavel.options.selectedIndex].text;
+            var elemFase = document.getElementById("fase");
+            var selecionadaFase = elemFase.options[elemFase.options.selectedIndex].text;
+            var elemRecorreu = document.getElementById("recorreu");
+            var selecionadaRecorreu = elemRecorreu.options[elemRecorreu.options.selectedIndex].text;
+            var valorCondenacao = document.getElementById("condenação").value;
+            valorCondenacao = (document.getElementById("condenação-select").value === "3") ? "R$ " + valorCondenacao : "NÃO HOUVE";
+            var elemObrigacao = document.getElementById("obrigação");
+            var selecionadaObrigacao = elemObrigacao.options[elemObrigacao.options.selectedIndex].text;
+            var elemStatus = document.getElementById("status");
+            var selecionadaStatus = elemStatus.options[elemStatus.options.selectedIndex].text;
+            var elemCustas = document.getElementById("custas");
+            var selecionadaCustas = elemCustas.options[elemCustas.options.selectedIndex].text;
+            var elemReativacao = document.getElementById("reativação");
+            var selecionadaReativacao = elemReativacao.options[elemReativacao.options.selectedIndex].text;
+            var resultado = "DATA DO TRÂNSITO EM JULGADO: " + dataFormatada +
+                "\n\n\nDATA DO ACORDO: " + acordoFormatada +
+                "\n\n\nRESPONSÁVEL DO PROCESSO: " + selecionadaResponsavel +
+                "\n\n\nFASE: " + selecionadaFase +
+                "\n\n\nQUEM RECORREU: " + selecionadaRecorreu +
+                "\n\n\nCONDENAÇÃO/CUMPRIMENTO EM PAGAMENTO: " + valorCondenacao +
+                "\n\n\nOBRIGAÇÃO DE FAZER: " + selecionadaObrigacao +
+                "\n\n\nSTATUS: " + selecionadaStatus +
+                "\n\n\nHOUVE PAGAMENTO DE CUSTAS FINAIS? " + selecionadaCustas +
+                "\n\n\nHOUVE REATIVAÇÃO? " + selecionadaReativacao;
 
-      document.getElementById("resultadoTexto").innerText = resultado;
-    }  
-  </script>
+            document.getElementById("resultadoTexto").innerText = resultado;
+        }
+    </script>
 </head>
+
 <body>
-<center>
+    <center>
 
-  <button onclick="document.getElementById('form1').reset(); document.getElementById('form2').reset(); document.getElementById('form3').reset(); document.getElementById('form4').reset(); document.getElementById('form5').reset(); document.getElementById('form6').reset(); document.getElementById('form7').reset(); document.getElementById('form8').reset(); document.getElementById('form9').reset(); document.getElementById('form10').reset(); document.getElementById('resultadoTexto').innerText = '';" style="margin: 0; padding: 0; border: none; background: none;">
-    <img src="C:\Users\daire\OneDrive\Área de Trabalho\QCA\logo.qca.png" style="width: 300px; height: 90px; margin-right: 10px;" alt="Limpar modelo">
-  </button>
+        <button onclick="document.getElementById('form1').reset(); document.getElementById('form2').reset(); document.getElementById('form3').reset(); document.getElementById('form4').reset(); document.getElementById('form5').reset(); document.getElementById('form6').reset(); document.getElementById('form7').reset(); document.getElementById('form8').reset(); document.getElementById('form9').reset(); document.getElementById('form10').reset(); document.getElementById('resultadoTexto').innerText = '';" style="margin: 0; padding: 0; border: none; background: none;">
+            <img src="./logo.qca.png" style="width: 300px; height: 90px; margin-right: 10px;" alt="Limpar modelo">
+        </button>
 
+        <p ALING=center><font size="4" color="Black">MODELO DE ENCERRAMENTO</font></p>
+    </center>
 
-  <p ALING=center><font size="4" color="Black">MODELO DE ENCERRAMENTO</font></p>
-</center>
+    <table style="width: 100%;">
+        <tr>
+            <td style="width: 50%; background-color: #ffffff;">
 
-  <table style="width: 100%;">
-  <tr>
-  <td style="width: 50%; background-color: #ffffff;">
-  
-  <p>Data do trânsito em julgado</p>
-  <form id="form1">
-    <input type="date" name="data.trans" id="data">
-  </form>
+                <p>Data do trânsito em julgado</p>
+                <form id="form1">
+                    <input type="date" name="data.trans" id="data">
+                </form>
 
+              
   <p>Data do acordo</p>
   <form id="form2">
     <input type="date" name="data.acordo" id="acordo">
@@ -185,15 +187,19 @@
   </form>
   <p>
   <button onclick="obterOpcaoSelecionada()">Obter modelo de encerramento</button> </p>
-  </td>
-  <td style="width: 50%; background-color: #ffffff;">
-  <p id="resultadoTexto"></p>
-  <button onclick="selecionarTexto()">Copiar OBF</button>
-  </td>
 
+            </td>
+            <td style="width: 50%; background-color: #ffffff;">
+                <p id="resultadoTexto"></p>
+                <button onclick="selecionarTexto()">Copiar OBF</button>
+            </td>
+        </tr>
+    </table>
 
-</tr>
-</table>
+</body>
+
+</html>
+
 
 </body>
 </html>
