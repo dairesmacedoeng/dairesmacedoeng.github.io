@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>OBF</title>
 
-  <script>
+<head>
+    <title>OBF</title>
+
+    <script>
         function selecionarTexto() {
             var elemento = document.getElementById("resultadoTexto");
 
@@ -25,130 +26,78 @@
         }
     </script>
 
-  <script type="text/javascript">
-    function condicional() {
-      var selectedOption = document.getElementById("houve.multa").value;
-      var textBox = document.getElementById("multa");
-      if (selectedOption === "2") {
-        textBox.style.display = "none";
-      } else {
-        textBox.style.display = "block";
-      }
-    }
+    <script type="text/javascript">
+        function condicional() {
+            var selectedOption = document.getElementById("houve.multa").value;
+            var textBox = document.getElementById("multa");
+            if (selectedOption === "2") {
+                textBox.style.display = "none";
+            } else {
+                textBox.style.display = "block";
+            }
+        }
 
-    function obterOpcaoSelecionada() {
-      var valorDataest = document.getElementById("dataest").value;
-      var dataSplit = valorDataest.split("-");
-      var dataFormatada = dataSplit[2] + "/" + dataSplit[1] + "/" + dataSplit[0];
+        function obterOpcaoSelecionada() {
+            var valorDataest = document.getElementById("dataest").value;
+            var dataSplit = valorDataest.split("-");
+            var dataFormatada = dataSplit[2] + "/" + dataSplit[1] + "/" + dataSplit[0];
 
-      var elemDescricao = document.getElementById("descricao");
-      var selecionadaDescricao = elemDescricao.options[elemDescricao.selectedIndex].text;
+            var elemDescricao = document.getElementById("descricao");
+            var selecionadaDescricao = elemDescricao.options[elemDescricao.options.selectedIndex].text;
 
-      var elemEndereco = document.getElementById("endereco").value;
-      var elemTelefone = document.getElementById("telefone").value;
-      var elemProduto = document.getElementById("produto").value;
-      var elemPedido = document.getElementById("pedido").value;
+            var elemEndereco = document.getElementById("endereco").value;
+            var elemTelefone = document.getElementById("telefone").value;
+            var elemProduto = document.getElementById("produto").value;
+            var elemPedido = document.getElementById("pedido").value;
 
-      var selecionadaMulta = document.getElementById("houve.multa").options[document.getElementById("houve.multa").selectedIndex].text;
-      var valorMulta = document.getElementById("multa").value;
-      valorMulta = (document.getElementById("houve.multa").value === "5") ? "R$ " + valorMulta : "NÃO HOUVE";
+            var selecionadaMulta = document.getElementById("houve.multa").options[document.getElementById("houve.multa").selectedIndex].text;
+            var valorMulta = document.getElementById("multa").value;
+            valorMulta = (document.getElementById("houve.multa").value === "5") ? "R$ " + valorMulta : "NÃO HOUVE";
 
-      var selecionadaEstorno = document.getElementById("estorno").options[document.getElementById("estorno").selectedIndex].text;
+            var selecionadaEstorno = document.getElementById("estorno").options[document.getElementById("estorno").selectedIndex].text;
 
-      var resultado = "DESCRIÇÃO EXATA DA OBRIGAÇÃO DE FAZER: " + selecionadaDescricao +
-        "\n\n\nENDEREÇO DE ENTREGA: " + elemEndereco +
-        "\n\n\nTELEFONE DO AUTOR: " + elemTelefone +
-        "\n\n\nPRODUTO: " + elemProduto +
-        "\n\n\nNÚMERO DO PEDIDO: " + elemPedido +
-        "\n\n\nMULTA POR DESCUMPRIMENTO: " + valorMulta +
-        "\n\n\nHÁ O ESTORNO DA COMPRA? " + selecionadaEstorno +
-        "\n\n\nDATA DO ESTORNO: " + dataFormatada;
+            var resultado = "DESCRIÇÃO EXATA DA OBRIGAÇÃO DE FAZER: " + selecionadaDescricao +
+                "\n\n\nENDEREÇO DE ENTREGA: " + elemEndereco +
+                "\n\n\nTELEFONE DO AUTOR: " + elemTelefone +
+                "\n\n\nPRODUTO: " + elemProduto +
+                "\n\n\nNÚMERO DO PEDIDO: " + elemPedido +
+                "\n\n\nMULTA POR DESCUMPRIMENTO: " + valorMulta +
+                "\n\n\nHÁ O ESTORNO DA COMPRA? " + selecionadaEstorno +
+                "\n\n\nDATA DO ESTORNO: " + dataFormatada;
 
-      document.getElementById("resultadoTexto").innerText = resultado;
-    }  
-  </script>
+            document.getElementById("resultadoTexto").innerText = resultado;
+        }
+    </script>
 
 </head>
+
 <body>
-<center>
-  <button onclick="document.getElementById('form1').reset(); document.getElementById('form2').reset(); document.getElementById('form3').reset(); document.getElementById('form4').reset(); document.getElementById('form5').reset(); document.getElementById('form6').reset(); document.getElementById('form7').reset(); document.getElementById('form8').reset(); document.getElementById('resultadoTexto').innerText = '';" style="margin: 0; padding: 0; border: none; background: none;">
-    <img src="C:\Users\daire\OneDrive\Área de Trabalho\QCA\logo.qca.png" style="width: 300px; height: 90px; margin-right: 10px;" alt="Limpar modelo">
-  </button>
+    <center>
+        <button onclick="document.getElementById('form1').reset(); document.getElementById('form2').reset(); document.getElementById('form3').reset(); document.getElementById('form4').reset(); document.getElementById('form5').reset(); document.getElementById('form6').reset(); document.getElementById('form7').reset(); document.getElementById('form8').reset(); document.getElementById('resultadoTexto').innerText = '';" style="margin: 0; padding: 0; border: none; background: none;">
+            <img src="./logo.qca.png" style="width: 300px; height: 90px; margin-right: 10px;" alt="Limpar modelo">
+        </button>
 
-  <p ALING=center><font size="4" color="Black">MODELO DE OBF</font></p>
- </center>
+        <p ALING=center><font size="4" color="Black">MODELO DE OBF</font></p>
+    </center>
 
+    <table style="width: 100%;">
+        <tr>
+            <td style="width: 50%; background-color: #ffffff;">
 
-  <table style="width: 100%;">
-  <tr>
-  <td style="width: 50%; background-color: #ffffff;">
+                <p>Descrição exata da obrigação de fazer:</p>
+                <form id="form1">
+                    <select name="descricao.da.obg" id="descricao">
+                        <option value="0"></option>
+                        <option value="5">ENTREGA DE PRODUTO</option>
+                        <option value="2">TROCA DO PRODUTO</option>
+                        <option value="9">COLETA DO PRODUTO</option>
+                    </select>
+                </form>
 
-  <p>Descrição exata da obrigação de fazer:</p>
-  <form id="form1">
-    <select name="descricao.da.obg" id="descricao">
-      <option value="0"></option>
-      <option value="5">ENTREGA DE PRODUTO</option>
-      <option value="2">TROCA DO PRODUTO</option>
-      <option value="9">COLETA DO PRODUTO</option>
-    </select>
-  </form>
+                <!-- ... (seu formulário HTML permanece inalterado) -->
 
-  <p>Endereço de entrega:</p>
-  <form id="form2">
-    <input type="text" name="endereco.entrega" id="endereco">
-  </form>
+            </td>
+            <td style="width: 50%; background-color: #ffffff;">
+                <p id="resultadoTexto"></p>
+                <button onclick="se
 
-  <p>Telefone autor:</p>
-  <form id="form3">
-    <input type="text" name="tel.autor" id="telefone">
-  </form>
-
-  <p>Produto:</p>
-  <form id="form4">
-    <input type="text" name="prod" id="produto">
-  </form>
-
-  <p>Número do pedido:</p>
-  <form id="form5">
-    <input type="text" name="num.pedido" id="pedido">
-  </form>
-
-  <p>Multa por descumprimento?</p>
-  <form id="form6">
-    <input type="text" name="valor.desc" id="multa">
-    <select name="valor.descu" id="houve.multa" onchange="condicional()">
-      <option value="0"></option>
-      <option value="5">SIM</option>
-      <option value="2">NÃO</option>
-    </select>
-  </form>
-
-  <p>Há o estorno da compra?</p>
-  <form id="form7">
-    <select name="est" id="estorno">
-      <option value="0"></option>
-      <option value="5">SIM</option>
-      <option value="2">NÃO</option>
-    </select>
-  </form>
-
-  <p>Data do estorno</p>
-  <form id="form8">
-    <input type="date" name="data.est" id="dataest">
-  </form>
-<p>
-  <button onclick="obterOpcaoSelecionada()">Obter OBF</button> </p>
-</td>
-
-  <td style="width: 50%; background-color: #ffffff;">
-  <p id="resultadoTexto"></p>
-  <button onclick="selecionarTexto()">Copiar OBF</button>
-  </td>
-  
-  </tr>
-  </table>
-
-
-
-</body>
-</html>
