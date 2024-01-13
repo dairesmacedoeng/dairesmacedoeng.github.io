@@ -94,7 +94,52 @@
                     </select>
                 </form>
 
-                <!-- ... (seu formulário HTML permanece inalterado) -->
+               
+  <p>Endereço de entrega:</p>
+  <form id="form2">
+    <input type="text" name="endereco.entrega" id="endereco">
+  </form>
+
+  <p>Telefone autor:</p>
+  <form id="form3">
+    <input type="text" name="tel.autor" id="telefone">
+  </form>
+
+  <p>Produto:</p>
+  <form id="form4">
+    <input type="text" name="prod" id="produto">
+  </form>
+
+  <p>Número do pedido:</p>
+  <form id="form5">
+    <input type="text" name="num.pedido" id="pedido">
+  </form>
+
+  <p>Multa por descumprimento?</p>
+  <form id="form6">
+    <input type="text" name="valor.desc" id="multa">
+    <select name="valor.descu" id="houve.multa" onchange="condicional()">
+      <option value="0"></option>
+      <option value="5">SIM</option>
+      <option value="2">NÃO</option>
+    </select>
+  </form>
+
+  <p>Há o estorno da compra?</p>
+  <form id="form7">
+    <select name="est" id="estorno">
+      <option value="0"></option>
+      <option value="5">SIM</option>
+      <option value="2">NÃO</option>
+    </select>
+  </form>
+
+  <p>Data do estorno</p>
+  <form id="form8">
+    <input type="date" name="data.est" id="dataest">
+  </form>
+<p>
+  <button onclick="obterOpcaoSelecionada()">Obter OBF</button> </p>
 
             </td>
             <td style="width: 50%; background-color: #ffffff;">
