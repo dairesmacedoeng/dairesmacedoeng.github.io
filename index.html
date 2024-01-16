@@ -1,37 +1,46 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Modelos - QCA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos QCA</title>
+    <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
-    <style>
-        button {
-  background-color: #008080; /* azul escuro */
-  color: white;
-  border: 1px solid #001f3f; /* borda sólida azul escuro */
-  border-radius: 5px; /* cantos arredondados */
-  margin: 10px;
-  padding: 8px 16px; /* 8px superior/inferior, 16px esquerda/direita */
-  font-family: 'Courier New', monospace; /* fonte Courier New */
-  font-size: 16px;
-  font-weight: bold;
-}
-       
-    </style>
-    <center>
-        
-        <img src="./logo.qca.png" alt="Logo QCA" style="width: 300px; height: 90px; margin-right: 50px;">
-        <img src="./logo.magalu.png" alt="Limpar modelo" style="width: 180px; height: 90px; margin-right: 10px;">    
-        
-    </center>
-    <center>
-        <p ALING=center><font face="cuckoo" size="4" color="Black"> MODELOS DE ENVIO</p>
-        <a href="./Encerramento.html"> <button>Encerramento</button></a>
-        <a href="./OBP.html"> <button>OBP</button></a>
-        <a href="./OBF.html"> <button>OBF</button></a>
-    </center>
+    <header>
+        <div class="inicial">
+            <img src="./logo.qca.png" alt="Logo QCA" style="width: 150px; height: 40px; margin-right: 30px;">
+            <img src="./logo.magalu.png" alt="Limpar modelo" style="width: 120px; height: 45px; margin-right: 550px;">
+            <ul>
+                <li><a href="./Encerramento.html">Encerramento</a></li>
+                <li><a href="./OBP.html">Obrigação de pagar</a></li>
+                <li><a href="./OBF.html">Obrigação de fazer</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="retangulo">
+            <img src="./check.png"  style="width: 80px; height: 70px; margin: 0;">
+            <h1>Encerramento</h1>
+            <h2>Refere-se ao término de um processo judicial, indicando que todas as fases e procedimentos foram concluídos. Pode envolver a sentença final, acordos entre as partes ou qualquer outra resolução que encerre formalmente o caso.</h2>
+            <a href="./Encerramento.html"><button>Encerramento</button></a>
+        </div>
+        <div class="retangulo">
+            <img src="./moeda.png" style="width: 90px; height: 80px; margin: 0;">
+            <h1>Obrigação de pagar</h1>
+            <h2>Representa uma fase em que uma das partes é legalmente obrigada a efetuar um pagamento, seja por danos materiais, indenizações ou outras obrigações financeiras decorrentes do processo judicial.</h2>
+            <a href="./OBP.html"><button>OBP</button></a>
+        </div>
+        <div class="retangulo">
+            <img src="./entrega.png" style="width: 100px; height: 60px; margin: 0;">
+            <h1>Obrigação de fazer</h1>
+            <h2>Caracteriza-se por determinar que uma parte do processo tem a obrigação de realizar determinadas ações específicas, como entregar um produto, realizar uma troca ou cumprir outras exigências estabelecidas pelo tribunal.</h2>
+            <a href="./OBF.html"><button>OBF</button></a>
+        </div>
+    </main>
+            
+    <div class="rodape">
+        <h3>Desenvolvido por: Daíres Macedo</h3>
+    </div>
 </body>
-
 </html>
