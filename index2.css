@@ -1,0 +1,71 @@
+.inicial{
+    display: center;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+body{
+    background-image: url(./fundo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+button{
+    background-color: silver;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.retangulo {
+    text-align: left;
+    padding: 20px;
+    background-color: rgba(192, 192, 192, 0) ;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    color: black;
+    font-size: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0 10px 0 0;
+}
+
+.resultado-retangulo {
+    text-align: justify;
+    padding: 20px;
+    background-color: rgba(192, 192, 192, 0.678);
+    width: 80%;
+    margin: 20px auto;  /* Ajuste a margem superior conforme necessário */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    font-size: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.pergunta-select p,
+.pergunta-select select {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.pergunta-select p {
+    margin-right: 10px; /* Ajuste conforme necessário para adicionar espaço entre a pergunta e o select */
+}
+
+.title {
+
+    font-family: 'open_sansregular';
+    font-weight: 600;
+    font-size: 2em;
+    color: rgb(129, 129, 129);
+    text-align: center;
+    margin-bottom:20px;
+}
+
+

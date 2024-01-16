@@ -4,116 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encerramento</title>
+    <link rel="stylesheet" href="index2.css">
 
-    <script>
-        function selecionarTexto() {
-            var elemento = document.getElementById("resultadoTexto");
-
-            if (document.body.createTextRange) {
-                // Internet Explorer
-                var range = document.body.createTextRange();
-                range.moveToElementText(elemento);
-                range.select();
-            } else if (window.getSelection) {
-                // Outros navegadores
-                var range = document.createRange();
-                range.selectNode(elemento);
-                window.getSelection().removeAllRanges();
-                window.getSelection().addRange(range);
-            }
-
-            // Copiar para a área de transferência (opcional)
-            document.execCommand("copy");
-        }
-    </script>
-
-    <script type="text/javascript">
-        function condicional() {
-            var selectedOption = document.getElementById("condenação-select").value;
-            var textBox = document.getElementById("condenação");
-            if (selectedOption === "4") {
-                textBox.style.display = "none";
-            } else {
-                textBox.style.display = "block";
-            }
-        }
-
-        function obterOpcaoSelecionada() {
-            var valorData = document.getElementById("data").value;
-            var valorAcordo = document.getElementById("acordo").value;
-            var dataSplit = valorData.split("-");
-            var dataFormatada = dataSplit[2] + "/" + dataSplit[1] + "/" + dataSplit[0];
-            var acordoSplit = valorAcordo.split("-");
-            var acordoFormatada = acordoSplit[2] + "/" + acordoSplit[1] + "/" + acordoSplit[0];
-            var elemResponsavel = document.getElementById("responsável");
-            var selecionadaResponsavel = elemResponsavel.options[elemResponsavel.options.selectedIndex].text;
-            var elemFase = document.getElementById("fase");
-            var selecionadaFase = elemFase.options[elemFase.options.selectedIndex].text;
-            var elemRecorreu = document.getElementById("recorreu");
-            var selecionadaRecorreu = elemRecorreu.options[elemRecorreu.options.selectedIndex].text;
-            var valorCondenacao = document.getElementById("condenação").value;
-            valorCondenacao = (document.getElementById("condenação-select").value === "3") ? "R$ " + valorCondenacao : "NÃO HOUVE";
-            var elemObrigacao = document.getElementById("obrigação");
-            var selecionadaObrigacao = elemObrigacao.options[elemObrigacao.options.selectedIndex].text;
-            var elemStatus = document.getElementById("status");
-            var selecionadaStatus = elemStatus.options[elemStatus.options.selectedIndex].text;
-            var elemCustas = document.getElementById("custas");
-            var selecionadaCustas = elemCustas.options[elemCustas.options.selectedIndex].text;
-            var elemReativacao = document.getElementById("reativação");
-            var selecionadaReativacao = elemReativacao.options[elemReativacao.options.selectedIndex].text;
-            var resultado = "DATA DO TRÂNSITO EM JULGADO: " + dataFormatada +
-                "\n\n\nDATA DO ACORDO: " + acordoFormatada +
-                "\n\n\nRESPONSÁVEL DO PROCESSO: " + selecionadaResponsavel +
-                "\n\n\nFASE: " + selecionadaFase +
-                "\n\n\nQUEM RECORREU: " + selecionadaRecorreu +
-                "\n\n\nCONDENAÇÃO/CUMPRIMENTO EM PAGAMENTO: " + valorCondenacao +
-                "\n\n\nOBRIGAÇÃO DE FAZER: " + selecionadaObrigacao +
-                "\n\n\nSTATUS: " + selecionadaStatus +
-                "\n\n\nHOUVE PAGAMENTO DE CUSTAS FINAIS? " + selecionadaCustas +
-                "\n\n\nHOUVE REATIVAÇÃO? " + selecionadaReativacao;
-
-            document.getElementById("resultadoTexto").innerText = resultado;
-        }
-    </script>
+    </div>
 </head>
 
 <body>
-    <center>
+    
+    <div class="inicial">
+        <center>
 
         <button onclick="document.getElementById('form1').reset(); document.getElementById('form2').reset(); document.getElementById('form3').reset(); document.getElementById('form4').reset(); document.getElementById('form5').reset(); document.getElementById('form6').reset(); document.getElementById('form7').reset(); document.getElementById('form8').reset(); document.getElementById('form9').reset(); document.getElementById('form10').reset(); document.getElementById('resultadoTexto').innerText = '';" style="margin: 0; padding: 0; border: none; background: none;">
             <img src="./logo.qca.png" style="width: 300px; height: 90px; margin-right: 10px;" alt="Limpar modelo">
         </button>
 
-        <p ALING=center><font size="4" color="Black">MODELO DE ENCERRAMENTO</font></p>
+        <h1 class="title">Modelo de Encerramento</font></h1>
     </center>
-
+    </div>
+<main>
     <table style="width: 100%;">
         <tr>
-            <td style="width: 50%; background-color: #ffffff;">
+            <td>
+<div class="retangulo">
 
-                <p>Data do trânsito em julgado</p>
-                <form id="form1">
-                    <input type="date" name="data.trans" id="data">
-                </form>
-
-              
-  <p>Data do acordo</p>
-  <form id="form2">
-    <input type="date" name="data.acordo" id="acordo">
-  </form>
-
-  <p>Quem é o responsável do processo?</p>
-  <form id="form3">
-    <select name="resp.do.processo" id="responsável">
-      <option value="0"></option>
-      <option value="5">MAGALU</option>
-      <option value="2">LUIZACRED</option>
-      <option value="7">CORREÚ</option>
+  <form id="form0" class="pergunta-select">
+    <p>Qual o tipo de encerramento?</p>
+    <select name="tipo.enc" id="tipo" onchange="condicionalTipo()">
+        <option value="0"></option>
+        <option value="1">SENTENÇA</option>
+        <option value="2">ACORDO</option>
     </select>
   </form>
 
-  <p>Qual a fase do processo?</p>
-  <form id="form4">
+  <form id="form1" class="pergunta-select" style="display: none;">
+    <p>Qual a data do trânsito em julgado?</p>
+  <input type="date" name="data.trans" id="data">
+  </form>
+
+  <form id="form2" class="pergunta-select" style="display: none;">
+    <p>Qual a data do acordo?</p>
+    <input type="date" name="data.acordo" id="acordo">
+  </form>
+
+  <form id="form3" class="pergunta-select">
+    <p>Quem é o responsável do processo?</p>
+      <select name="resp.do.processo" id="responsável">
+          <option value="0"></option>
+          <option value="5">MAGALU</option>
+          <option value="2">LUIZACRED</option>
+          <option value="7">CORREÚ</option>
+      </select>
+  </form>
+  
+  <form id="form4" class="pergunta-select">
+    <p>Qual a fase do processo?</p>
     <select name="fase" id="fase">
       <option value="0"></option>
       <option value="5">SENTENÇA</option>
@@ -124,8 +68,8 @@
     </select>
   </form>
 
-  <p>Quem recorreu?</p>
-  <form id="form5">
+  <form id="form5" class="pergunta-select">
+    <p>Quem recorreu?</p>
     <select name="quem.recorreu" id="recorreu">
       <option value="0"></option>
       <option value="5">NENHUM</option>
@@ -134,8 +78,8 @@
     </select>
   </form>
 
-  <p>Qual o valor em R$ da condenação/cumprimento em pagamento?</p>
-  <form id="form6">
+  <form id="form6" class="pergunta-select">
+    <p>Qual o valor em R$ da condenação/cumprimento em pagamento?</p>
     <input type="text" name="valor.condenação" id="condenação">
     <select name="cond" id="condenação-select" onchange="condicional()">
       <option value="0"></option>
@@ -144,8 +88,8 @@
     </select>
   </form>
 
-  <p>Qual a obrigação de fazer?</p>
-  <form id="form7">
+  <form id="form7" class="pergunta-select">
+    <p>Qual a obrigação de fazer?</p>
     <select name="obg.de.fazer" id="obrigação">
       <option value="0"></option>
       <option value="5">ENTREGA DE PRODUTO</option>
@@ -158,8 +102,8 @@
     </select>
   </form>
 
-  <p>Status da obrigação de fazer:</p>
-  <form id="form8">
+  <form id="form8" class="pergunta-select">
+    <p>Status da obrigação de fazer:</p>
     <select name="obg.de.fazer" id="status">
       <option value="0"></option>
       <option value="5">REALIZADA</option>
@@ -169,8 +113,8 @@
     </select>
   </form>
 
-  <p>Houve pagamento de custas finais?</p>
-  <form id="form9">
+  <form id="form9" class="pergunta-select">
+    <p>Houve pagamento de custas finais?</p>
     <select name="custas.finais" id="custas" onchange="condicional()">
       <option value="0"></option>
       <option value="5">SIM</option>
@@ -178,8 +122,8 @@
     </select>
   </form>
 
-  <p>Houve reativação?</p>
-  <form id="form10">
+  <form id="form10" class="pergunta-select">
+    <p>Houve reativação?</p>
     <select name="reat" id="reativação">
       <option value="0"></option>
       <option value="5">SIM</option>
@@ -188,15 +132,19 @@
   </form>
   <p>
   <button onclick="obterOpcaoSelecionada()">Obter modelo de encerramento</button> </p>
+</div>
 
             </td>
-            <td style="width: 50%; background-color: #ffffff;">
-                <p id="resultadoTexto"></p>
-                <button onclick="selecionarTexto()">Copiar OBF</button>
+            <td>
+                <div class="resultado-retangulo">
+                    <p id="resultadoTexto"></p>
+                    <button onclick="selecionarTexto()" id="botaoCopiarModelo" style="display: none;">Copiar modelo</button>
+                </div>
             </td>
         </tr>
     </table>
-
+</main>
+<script type="text/javascript" src="./encerramento.js"></script>
 </body>
 
 </html>

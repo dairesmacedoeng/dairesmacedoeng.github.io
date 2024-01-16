@@ -4,84 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>OBP</title>
-    
-        <script>
-            function selecionarTexto() {
-                var elemento = document.getElementById("resultadoTexto");
-    
-                if (document.body.createTextRange) {
-                    // Internet Explorer
-                    var range = document.body.createTextRange();
-                    range.moveToElementText(elemento);
-                    range.select();
-                } else if (window.getSelection) {
-                    // Outros navegadores
-                    var range = document.createRange();
-                    range.selectNode(elemento);
-                    window.getSelection().removeAllRanges();
-                    window.getSelection().addRange(range);
-                }
-    
-                // Copiar para a área de transferência (opcional)
-                document.execCommand("copy");
-            }
-        </script>
-    
-        <script type="text/javascript">
-            function condicional() {
-                var selectedOption = document.getElementById("houve.multa").value;
-                var textBox = document.getElementById("multa");
-                if (selectedOption === "2") {
-                    textBox.style.display = "none";
-                } else {
-                    textBox.style.display = "block";
-                }
-            }
-    
-            function obterOpcaoSelecionada() {
-    
-                var elemAcionamento = document.getElementById("acionamento");
-                var selecionadaAcionamento = elemAcionamento.options[elemAcionamento.selectedIndex].text;
-    
-                var elemVenda = document.getElementById("venda");
-                var selecionadaVenda = elemVenda.options[elemVenda.selectedIndex].text;
-    
-                var elemEntrega = document.getElementById("entrega");
-                var selecionadaEntrega = elemEntrega.options[elemEntrega.selectedIndex].text;
-    
-                var elemProcesso = document.getElementById("processo");
-                var selecionadaProcesso = elemProcesso.options[elemProcesso.selectedIndex].text;
-    
-                var elemObs = document.getElementById("obs");
-                var selecionadaObs = elemObs.options[elemObs.selectedIndex].text;
-    
-                var resultado = "ASSUNTO DO ACIONAMENTO: " + selecionadaAcionamento +
-                    "\n\n\nRESPONSÁVEL PELA VENDA: " + selecionadaVenda +
-                    "\n\n\nRESPONSÁVEL PELA ENTREGA: " + selecionadaEntrega +
-                    "\n\n\nRESPONSÁVEL PELO PROCESSO: " + selecionadaProcesso +
-                    "\n\n\nOBS: " + selecionadaObs;
-    
-                document.getElementById("resultadoTexto").innerText = resultado;
-            }
-        </script>
+        <link rel="stylesheet" href="index2.css">
         
     </head>
     
     <body>
+        <div class="inicial">
         <center>
             <button onclick="document.getElementById('form1').reset(); document.getElementById('form2').reset(); document.getElementById('form3').reset(); document.getElementById('form4').reset(); document.getElementById('form5').reset(); document.getElementById('resultadoTexto').innerText = '';" style="margin: 0; padding: 0; border: none; background: none;">
                 <img src="./logo.qca.png" style="width: 300px; height: 90px; margin-right: 10px;" alt="Limpar modelo">
             </button>
     
-            <p ALING=center><font size="4" color="Black">MODELO DE OBP</font></p>
+            <h1 class="title">Modelo de OBP</h1>
         </center>
+        </div>
     
         <table style="width: 100%;">
             <tr>
-                <td style="width: 50%; background-color: #ffffff;">
+                <td>
     
-                    <p>Assunto do acionamento:</p>
-                    <form id="form1">
+                    <form id="form1" class="pergunta-select">
+                        <p>Assunto do acionamento:</p>
                         <select name="ass" id="acionamento">
                             <option value="0"></option>
                             <option value="5">FALHA NA ENTREGA</option>
@@ -92,8 +35,8 @@
                         </select>
                     </form>
     
-                    <p>Quem é o responsável pela venda?</p>
-                    <form id="form2">
+                    <form id="form2" class="pergunta-select">
+                        <p>Quem é o responsável pela venda?</p>
                         <select name="resp.venda" id="venda">
                             <option value="0"></option>
                             <option value="5">MAGAZINE LUIZA</option>
@@ -102,8 +45,8 @@
                         </select>
                     </form>
     
-                    <p>Quem é o responsável pela entrega?</p>
-                    <form id="form3">
+                    <form id="form3" class="pergunta-select">
+                        <p>Quem é o responsável pela entrega?</p>
                         <select name="resp.entrega" id="entrega">
                             <option value="0"></option>
                             <option value="5">MAGAZINE LUIZA</option>
@@ -112,8 +55,8 @@
                         </select>
                     </form>
     
-                    <p>Quem é o responsável pelo processo?</p>
-                    <form id="form4">
+                    <form id="form4" class="pergunta-select">
+                        <p>Quem é o responsável pelo processo?</p>
                         <select name="resp.processo" id="processo">
                             <option value="0"></option>
                             <option value="5">MAGAZINE LUIZA</option>
@@ -121,8 +64,8 @@
                         </select>
                     </form>
     
-                    <p>OBS:</p>
-                    <form id="form5">
+                    <form id="form5" class="pergunta-select">
+                        <p>OBS:</p>
                         <select name="obss" id="obs">
                             <option value="0"></option>
                             <option value="5">SALDO REFERENTE À CONDENAÇÃO EM DANOS MORAIS E MATERIAIS</option>
@@ -138,13 +81,16 @@
     
                 </td>
     
-                <td style="width: 50%; background-color: #ffffff;">
+                <td>
+                    <div class="resultado-retangulo">
                     <p id="resultadoTexto"></p>
-                    <button onclick="selecionarTexto()">Copiar OBF</button>
+                    <button onclick="selecionarTexto()" id="botaoCopiarModelo" style="display: none;">Copiar modelo</button>
+                    </div>
                 </td>
             </tr>
     
         </table>
+        <script type="text/javascript" src="./obp.js"></script>
     </body>
     
     </html>
