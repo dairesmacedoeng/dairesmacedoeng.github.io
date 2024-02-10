@@ -56,7 +56,7 @@ function obterOpcaoSelecionada() {
     var dataSplit = valorData.split("-");
     var dataFormatada = dataSplit[2] + "/" + dataSplit[1] + "/" + dataSplit[0];
     
-    var elemTipo  document.getElementById("tipo");
+    var elemTipo = document.getElementById("tipo");
     var selecionadaTipo = elemTipo.options[elemTipo.selectedIndex].text;
     var elemResponsavel = document.getElementById("responsável");
     var selecionadaResponsavel = elemResponsavel.options[elemResponsavel.selectedIndex].text;
