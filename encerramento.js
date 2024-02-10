@@ -72,7 +72,7 @@ function obterOpcaoSelecionada() {
     var selecionadaReativacao = elemReativacao.options[elemReativacao.selectedIndex].text;
 
     var resultado = "\n\n\nTIPO DE ENCERRAMENTO: " + selecionadaTipo +
-        valorData +
+        "\n\n\n"valorData +
         "\n\n\nRESPONSÁVEL DO PROCESSO: " + selecionadaResponsavel +
         "\n\n\nFASE: " + selecionadaFase +
         "\n\n\nQUEM RECORREU: " + selecionadaRecorreu +
