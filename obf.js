@@ -60,6 +60,7 @@ function obterOpcaoSelecionada() {
 
     var selecionadaEstorno = document.getElementById("estorno").options[document.getElementById("estorno").selectedIndex].text;
 
+    if (document.getElementById("estorno").value === "1") {
     var resultado = "DESCRIÇÃO EXATA DA OBRIGAÇÃO DE FAZER: " + selecionadaDescricao +
         "\n\n\nENDEREÇO DE ENTREGA: " + elemEndereco +
         "\n\n\nTELEFONE DO AUTOR: " + elemTelefone +
@@ -68,6 +69,16 @@ function obterOpcaoSelecionada() {
         "\n\n\nMULTA POR DESCUMPRIMENTO: " + valorMulta +
         "\n\n\nHÁ O ESTORNO DA COMPRA? " + selecionadaEstorno +
         "\n\n\nDATA DO ESTORNO: " + dataFormatada;
+} else {
+    // Caso contrário, não exibe a data do estorno
+    var resultado = "DESCRIÇÃO EXATA DA OBRIGAÇÃO DE FAZER: " + selecionadaDescricao +
+        "\n\n\nENDEREÇO DE ENTREGA: " + elemEndereco +
+        "\n\n\nTELEFONE DO AUTOR: " + elemTelefone +
+        "\n\n\nPRODUTO: " + elemProduto +
+        "\n\n\nNÚMERO DO PEDIDO: " + elemPedido +
+        "\n\n\nMULTA POR DESCUMPRIMENTO: " + valorMulta +
+        "\n\n\nHÁ O ESTORNO DA COMPRA? " + selecionadaEstorno;
+}
         
     var botaoCopiarModelo = document.getElementById("botaoCopiarModelo");
     botaoCopiarModelo.style.display = "block";
