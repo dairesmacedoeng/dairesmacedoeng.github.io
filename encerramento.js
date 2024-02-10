@@ -52,6 +52,10 @@ function obterOpcaoSelecionada() {
         valorData = "DATA DO ACORDO: " + document.getElementById("acordo").value;
     }
 
+    var valorData = document.getElementById("data").value;
+    var dataSplit = valorData.split("-");
+    var dataFormatada = dataSplit[2] + "/" + dataSplit[1] + "/" + dataSplit[0];
+
     var elemResponsavel = document.getElementById("responsável");
     var selecionadaResponsavel = elemResponsavel.options[elemResponsavel.selectedIndex].text;
     var elemFase = document.getElementById("fase");
@@ -69,7 +73,7 @@ function obterOpcaoSelecionada() {
     var elemReativacao = document.getElementById("reativação");
     var selecionadaReativacao = elemReativacao.options[elemReativacao.selectedIndex].text;
 
-    var resultado = valorData +
+    var resultado = valorData + dataFormatada +
         "\n\n\nRESPONSÁVEL DO PROCESSO: " + selecionadaResponsavel +
         "\n\n\nFASE: " + selecionadaFase +
         "\n\n\nQUEM RECORREU: " + selecionadaRecorreu +
