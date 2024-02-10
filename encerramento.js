@@ -51,10 +51,6 @@ function obterOpcaoSelecionada() {
     } else if (selectedOption === "2") {
         valorData = "DATA DO ACORDO: " + formatarData(document.getElementById("acordo").value);
     }
-
-    var valorData = document.getElementById("data").value;
-    var dataSplit = valorData.split("-");
-    var dataFormatada = dataSplit[2] + "/" + dataSplit[1] + "/" + dataSplit[0];
     
     var elemTipo = document.getElementById("tipo");
     var selecionadaTipo = elemTipo.options[elemTipo.selectedIndex].text;
