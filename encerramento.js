@@ -47,9 +47,9 @@ function obterOpcaoSelecionada() {
     var valorData = "";
 
     if (selectedOption === "1") {
-        valorData = "DATA DO TRÂNSITO EM JULGADO: " + document.getElementById("data").value;
+        valorData = "DATA DO TRÂNSITO EM JULGADO: " + formatarData(document.getElementById("data").value);
     } else if (selectedOption === "2") {
-        valorData = "DATA DO ACORDO: " + document.getElementById("acordo").value;
+        valorData = "DATA DO ACORDO: " + formatarData(document.getElementById("acordo").value);
     }
 
     var valorData = document.getElementById("data").value;
@@ -90,6 +90,11 @@ function obterOpcaoSelecionada() {
     botaoCopiarModelo.style.display = "block";
 
     document.getElementById("resultadoTexto").innerText = resultado;
+}
+
+function formatarData(data) {
+    var dataSplit = data.split("-");
+    return dataSplit[2] + "/" + dataSplit[1] + "/" + dataSplit[0];
 }
 
 function condicional3() {
