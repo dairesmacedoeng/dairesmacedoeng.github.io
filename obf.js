@@ -28,6 +28,19 @@ function condicional() {
     }
 }
 
+function condicionalTipo() {
+    var selectedOption = document.getElementById("estorno").value;
+    var form8 = document.getElementById("form8");
+
+    if (selectedOption === "1") {
+        form8.style.display = "block"; // Mostra form8
+    } else if (selectedOption === "2") {
+        form8.style.display = "none"; // Se opção 2, oculta form8
+    } else {
+        form8.style.display = "none"; // Oculta form8 se nenhuma opção válida for selecionada
+    }
+}
+
 function obterOpcaoSelecionada() {
     var valorDataest = document.getElementById("dataest").value;
     var dataSplit = valorDataest.split("-");
