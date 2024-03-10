@@ -56,7 +56,7 @@ function obterOpcaoSelecionada() {
 
     var selecionadaMulta = document.getElementById("houve.multa").options[document.getElementById("houve.multa").selectedIndex].text;
     var valorMulta = document.getElementById("multa").value;
-    valorMulta = (document.getElementById("houve.multa").value === "5") ? "R$ " + valorMulta : "NÃO HOUVE";
+    valorMulta = (document.getElementById("houve.multa").value === "5") ?  + valorMulta : "NÃO HOUVE";
 
     var selecionadaEstorno = document.getElementById("estorno").options[document.getElementById("estorno").selectedIndex].text;
 
